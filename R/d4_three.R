@@ -12,6 +12,7 @@ d4_three <- function(inputList, width = "auto", height = "auto") {
     col4 = inputList[["col4"]],
     col5 = inputList[["col5"]],
     col6 = inputList[["col6"]],
+    col7 = inputList[["col7"]],
     text1 = inputList[["text1"]],
     text2 = inputList[["text2"]],
     text3 = inputList[["text3"]],
@@ -20,12 +21,15 @@ d4_three <- function(inputList, width = "auto", height = "auto") {
     text6 = inputList[["text6"]],
     text7 = inputList[["text7"]],
     cNames = inputList[["names"]],
+    method = inputList[["method"]],
     inputNames = inputList[["inputNames"]],
+    inputNames1 = inputList[["inputNames1"]],
     inputNames2 = inputList[["inputNames2"]],
     inputNames3 = inputList[["inputNames3"]],
     inputNames4 = inputList[["inputNames4"]],
     inputNames5 = inputList[["inputNames5"]],
-    inputNames6 = inputList[["inputNames6"]]
+    inputNames6 = inputList[["inputNames6"]],
+    inputNames7 = inputList[["inputNames7"]]
   )
 
   # create widget

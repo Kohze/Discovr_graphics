@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "dependencies:\n  - name: d3\n    version: 3.5.2\n    src: htmlwidgets/lib/d3\n    script:\n      - d3.min.js\n",
+    "created" : 1471385760424.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2508513456",
+    "id" : "7F273E2B",
+    "lastKnownWriteTime" : 1471116550,
+    "last_content_update" : 1471116550,
+    "path" : "~/Discovr_graphics/inst/htmlwidgets/d4_three.yaml",
+    "project_path" : "inst/htmlwidgets/d4_three.yaml",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "yaml"
+}

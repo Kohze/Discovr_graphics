@@ -5,15 +5,10 @@ HTMLWidgets.widget({
 
   factory: function(el, width, height) {
 
-    // TODO: define shared variables for this instance
-
     return {
 
       renderValue: function(x) {
 
-        // TODO: code to render the widget, e.g.
-  //      el.innerText = x.message;
-       // el.innerText= " test";
   var d;
   var sampleSVG = d3.select("#" + el.id).append("svg");
   var svg = sampleSVG.attr("class", "bubble");
@@ -48,6 +43,10 @@ HTMLWidgets.widget({
     return(d);
   }
 
+  function updateJSON7(){
+    d = x.inputNames7;
+    return(d);
+  }
 
   sampleSVG.append("rect")
                       .style("fill", "orange")
@@ -58,8 +57,8 @@ HTMLWidgets.widget({
                       .attr("height", 80);
 
   sampleSVG.append("rect")
-                      .style("fill", "yellow")
-                      .style("opacity", 0.1)
+                      .style("fill", "Ivory")
+                      .style("opacity", 1)
                       .attr("x", 0)
                       .attr("y", 80)
                       .attr("width", 215)
@@ -97,39 +96,59 @@ HTMLWidgets.widget({
                          .source({x:100, y:250})
                          .target({x:200, y:220});
 
-    sampleSVG.append("path")
+    var diagonal7 = d3.svg.diagonal()
+                         .source({x:50, y:200})
+                         .target({x:100, y:150});
+
+   var diagonal8 = d3.svg.diagonal()
+                       .source({x:50, y:200})
+                       .target({x:100, y:250});
+
+   sampleSVG.append("path")
                         .attr("d", diagonal)
                         .attr("stroke", x.col1)
                         .attr("stroke-width", 1)
                         .attr("fill", "none");
 
-    sampleSVG.append("path")
+   sampleSVG.append("path")
                         .attr("d", diagonal2)
                         .attr("stroke", x.col2)
                         .attr("stroke-width", 1)
                         .attr("fill", "none");
 
-    sampleSVG.append("path")
+   sampleSVG.append("path")
                         .attr("d", diagonal3)
                         .attr("stroke", x.col3)
                         .attr("stroke-width", 1)
                         .attr("fill", "none");
 
-    sampleSVG.append("path")
+   sampleSVG.append("path")
                         .attr("d", diagonal4)
                         .attr("stroke", x.col4)
                         .attr("stroke-width", 1)
                         .attr("fill", "none");
 
-    sampleSVG.append("path")
+   sampleSVG.append("path")
                         .attr("d", diagonal5)
                         .attr("stroke", x.col5)
                         .attr("stroke-width", 1)
                         .attr("fill", "none");
 
-    sampleSVG.append("path")
+   sampleSVG.append("path")
                         .attr("d", diagonal6)
                         .attr("stroke", x.col6)
+                        .attr("stroke-width", 1)
+                        .attr("fill", "none");
+
+   sampleSVG.append("path")
+                        .attr("d", diagonal7)
+                        .attr("stroke", x.col7)
+                        .attr("stroke-width", 1)
+                        .attr("fill", "none");
+
+   sampleSVG.append("path")
+                        .attr("d", diagonal8)
+                        .attr("stroke", x.col7)
                         .attr("stroke-width", 1)
                         .attr("fill", "none");
 
@@ -140,13 +159,19 @@ HTMLWidgets.widget({
                         .attr("cx", 20)
                         .attr("cy", 200)
                         .on("mouseover", function() {
+                            getNewData(updateJSON())
                             d3.select("#tx2").text(x.text1).style('opacity', 1);
-                            d3.select(this).style("fill","grey").style("stroke","black");
+                            d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
                             d3.select("#tx2").style('opacity', 1);
                             d3.select(this).style("fill","black").style("stroke","");
+                        })
+                        .on("click", function() {
+                            d3.selectAll("#bubblePlot").style("opacity",1).style("display","block");
+                            d3.selectAll(".node").style("opacity",1).style("display","block");
                         });
+
 
    sampleSVG.append("circle")
                         .style("stroke", "gray")
@@ -157,6 +182,26 @@ HTMLWidgets.widget({
                         .on("mouseover", function() {
                             getNewData(updateJSON())
                             d3.select("#tx2").text(x.text2).style('opacity', 1);
+                            d3.select(this).style("fill","grey");
+                        })
+                        .on("mouseout", function() {
+                            d3.select("#tx2").style('opacity', 1);
+                            d3.select(this).style("fill","black");
+                        })
+                        .on("click", function() {
+                            d3.selectAll("#bubblePlot").style("opacity",1).style("display","block");
+                            d3.selectAll(".node").style("opacity",1).style("display","block");
+                        });
+
+    sampleSVG.append("circle")
+                        .style("stroke", "gray")
+                        .style("fill", "black")
+                        .attr("r", 8)
+                        .attr("cx", 50)
+                        .attr("cy", 200)
+                        .on("mouseover", function() {
+                            getNewData(updateJSON7())
+                            d3.select("#tx2").text(x.text7).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
@@ -298,6 +343,26 @@ HTMLWidgets.widget({
                      .style('opacity', 1);
 
   sampleSVG.append("text")
+                     .attr("id","header1")
+                     .attr("x", 150)
+                     .attr("y", 20)
+                     .text("Method:")
+                     .attr("font-family", "sans-serif")
+                     .attr("font-size", "11px")
+                     .attr("fill", "black")
+                     .style('opacity', 1);
+
+   sampleSVG.append("text")
+                     .attr("id","header1")
+                     .attr("x", 200)
+                     .attr("y", 20)
+                     .text(x.method)
+                     .attr("font-family", "sans-serif")
+                     .attr("font-size", "11px")
+                     .attr("fill", "black")
+                     .style('opacity', 1);
+
+  sampleSVG.append("text")
                      .attr("id","datasetName")
                      .attr("x", 60)
                      .attr("y", 20)
@@ -317,72 +382,70 @@ HTMLWidgets.widget({
                      .attr("fill", "black")
                      .style('opacity', 1);
 
-//var d = x.inputNames2;
+  var diameter = 350,
+      format = d3.format(",d"),
+      color = d3.scale.category20c();
 
-var diameter = 350,
-    format = d3.format(",d"),
-    color = d3.scale.category20c();
+  var bubble = d3.layout.pack()
+      .sort(null)
+      .size([350, 300])
+      .padding(1.5);
 
-var bubble = d3.layout.pack()
-    .sort(null)
-    .size([350, 300])
-    .padding(1.5);
+  svg.append("rect")
+     .attr("id","bubblePlot")
+     .attr("width", "100%")
+     .attr("height", "100%")
+     .attr("fill", "Ivory")
+     .style("opacity", 0)
+     .style("display","none");
 
-svg.append("rect")
-   .attr("id","bubblePlot")
-   .attr("width", "100%")
-   .attr("height", "100%")
-   .attr("fill", "white")
-   .style("opacity", 0)
-   .style("display","none");
+  svg.append("rect")
+     .attr("id","bubblePlot")
+     .style("opacity", 0)
+     .style("display","none")
+     .attr("width", 80)
+     .attr("height", 40)
+     .attr("fill", "DarkSalmon")
+     .on("mouseover", function() {
+        d3.selectAll("#bubblePlot").style("opacity",0).style("display","none");
+      });
 
-svg.append("rect")
-   .attr("id","bubblePlot")
-   .style("opacity", 0)
-   .style("display","none")
-   .attr("width", 80)
-   .attr("height", 40)
-   .attr("fill", "red")
-   .on("mouseover", function() {
-      d3.selectAll("#bubblePlot").style("opacity",0).style("display","none");
-    });
+  svg.append("text")
+     .attr("id","bubblePlot")
+     .attr("x", 25)
+     .attr("y", 26)
+     .style("opacity", 0)
+     .text("back");
 
-svg.append("text")
-   .attr("id","bubblePlot")
-   .attr("x", 20)
-   .attr("y", 26)
-   .style("opacity", 0)
-   .text("back");
+  function getNewData(input) {
+    d3.json(input, function(error, root) {
+      d3.selectAll("g").remove();
+      var node = svg.selectAll(".node")
+          .attr("id","bubblePlot")
+          .data(bubble.nodes(classes(d))
+          .filter(function(d) { return !d.children; }))
+          .enter().append("g")
+          .attr("class", "node")
+          .style("opacity", 0)
+          .style("display","none")
+          .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
-function getNewData(input) {
-d3.json(input, function(error, root) {
-  d3.selectAll("g").remove();
-  var node = svg.selectAll(".node")
-      .attr("id","bubblePlot")
-      .data(bubble.nodes(classes(d))
-      .filter(function(d) { return !d.children; }))
-      .enter().append("g")
-      .attr("class", "node")
-      .style("opacity", 0)
-      .style("display","none")
-      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+      node.append("title")
+          .attr("id","bubblePlot")
+          .text(function(d) { return d.className + ": " + format(d.value); });
 
-  node.append("title")
-      .attr("id","bubblePlot")
-      .text(function(d) { return d.className + ": " + format(d.value); });
+      node.append("circle")
+          .attr("id","bubblePlot")
+          .attr("r", function(d) { return d.r; })
+          .style("fill", function(d) { return color(d.packageName); });
 
-  node.append("circle")
-      .attr("id","bubblePlot")
-      .attr("r", function(d) { return d.r; })
-      .style("fill", function(d) { return color(d.packageName); });
-
-  node.append("text")
-      .attr("id","bubblePlot")
-      .attr("font-size", "8px")
-      .attr("dy", ".2em")
-      .style("text-anchor", "middle")
-      .text(function(d) { return d.className.substring(0, d.r / 3); });
-});
+      node.append("text")
+          .attr("id","bubblePlot")
+          .attr("font-size", "8px")
+          .attr("dy", ".2em")
+          .style("text-anchor", "middle")
+          .text(function(d) { return d.className.substring(0, d.r / 3); });
+  });
 }
 
 function classes(root) {
@@ -404,7 +467,6 @@ d3.selectAll("g").style("opacity", 0);
 
       resize: function(width, height) {
 
-        // TODO: code to re-render the widget with a new size
 
       }
 
