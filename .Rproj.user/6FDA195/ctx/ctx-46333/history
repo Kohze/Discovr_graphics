@@ -1,5 +1,8 @@
 d4_three("blue","green", "black", "orange", "blue", "orange", "tester1", "tester2", "tester3", "tester4", "tester5", "tester6", "tester7")
 library(d3three)
+library(d3three)
+d4_three("blue","green", "black", "orange", "blue", "orange", "tester1", "tester2", "tester3", "tester4", "tester5", "tester6", "tester7")
+library(d3three)
 d4_three("blue","green", "black", "orange", "blue", "orange", "tester1", "tester2", "tester3", "tester4", "tester5", "tester6", "tester7")
 library(d3three)
 d4_three("blue","green", "black", "orange", "blue", "orange", "tester1", "tester2", "tester3", "tester4", "tester5", "tester6", "tester7")
@@ -503,10 +506,7 @@ d4_three(inputList)
 d4_three(inputList)
 library(d3three)
 d4_three(inputList)
-library(d3three)
-d4_three(inputList)
-inputList$text1a1 = "this is 1a1"
-library(d3three)
-d4_three(inputList)
-inputList$inputNames0 = inputList$inputNames6
-library(d3three)
+inputList$text1.1 = inputList$text1
+inputList$text1.1 = "this is 1.1"
+inputList$text1-1 = "this is 1.1"
+inputList$text1a1 = "this is 1.1"

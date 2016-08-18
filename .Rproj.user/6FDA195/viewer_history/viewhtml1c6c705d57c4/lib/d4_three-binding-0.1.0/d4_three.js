@@ -13,11 +13,6 @@ HTMLWidgets.widget({
   var sampleSVG = d3.select("#" + el.id).append("svg");
   var svg = sampleSVG.attr("class", "bubble");
 
-function updateJSON0(){
-    d = x.inputNames0;
-    return(d);
-  }
-
  function updateJSON(){
     d = x.inputNames;
     return(d);
@@ -164,7 +159,7 @@ function updateJSON0(){
                         .attr("cx", 20)
                         .attr("cy", 200)
                         .on("mouseover", function() {
-                            getNewData(updateJSON0());
+                            getNewData(updateJSON())
                             d3.select("#tx2").text(x.text1).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
