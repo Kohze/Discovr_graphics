@@ -13,43 +13,48 @@ HTMLWidgets.widget({
   var sampleSVG = d3.select("#" + el.id).append("svg");
   var svg = sampleSVG.attr("class", "bubble");
 
-function updateJSON0(){
-    d = x.inputNames0;
+function updateJSON1a1(){
+    d = x.inputNames1a1;
     return(d);
   }
 
- function updateJSON(){
-    d = x.inputNames;
+ function updateJSON1a2(){
+    d = x.inputNames1a2;
     return(d);
   }
 
-  function updateJSON2(){
-    d = x.inputNames2;
+  function updateJSON2a1(){
+    d = x.inputNames2a1;
     return(d);
   }
 
-  function updateJSON3(){
-    d = x.inputNames3;
+  function updateJSON2a2(){
+    d = x.inputNames2a2;
     return(d);
   }
 
-  function updateJSON4(){
-    d = x.inputNames4;
+  function updateJSON3a1(){
+    d = x.inputNames3a1;
     return(d);
   }
 
-  function updateJSON5(){
-    d = x.inputNames5;
+  function updateJSON3a2(){
+    d = x.inputNames3a2;
     return(d);
   }
 
-   function updateJSON6(){
-    d = x.inputNames6;
+   function updateJSON3a3(){
+    d = x.inputNames3a3;
     return(d);
   }
 
-  function updateJSON7(){
-    d = x.inputNames7;
+  function updateJSON3a4(){
+    d = x.inputNames3a4;
+    return(d);
+  }
+
+   function updateJSON4a1(){
+    d = x.inputNames4a1;
     return(d);
   }
 
@@ -111,49 +116,49 @@ function updateJSON0(){
 
    sampleSVG.append("path")
                         .attr("d", diagonal)
-                        .attr("stroke", x.col1)
+                        .attr("stroke", x.col1a1)
                         .attr("stroke-width", 1)
                         .attr("fill", "none");
 
-   sampleSVG.append("path")
+    sampleSVG.append("path")
                         .attr("d", diagonal2)
-                        .attr("stroke", x.col2)
+                        .attr("stroke", x.col1a2)
                         .attr("stroke-width", 1)
                         .attr("fill", "none");
 
    sampleSVG.append("path")
                         .attr("d", diagonal3)
-                        .attr("stroke", x.col3)
+                        .attr("stroke", x.col2a1)
                         .attr("stroke-width", 1)
                         .attr("fill", "none");
 
    sampleSVG.append("path")
                         .attr("d", diagonal4)
-                        .attr("stroke", x.col4)
+                        .attr("stroke", x.col2a2)
                         .attr("stroke-width", 1)
                         .attr("fill", "none");
 
    sampleSVG.append("path")
                         .attr("d", diagonal5)
-                        .attr("stroke", x.col5)
+                        .attr("stroke", x.col3a1)
                         .attr("stroke-width", 1)
                         .attr("fill", "none");
 
    sampleSVG.append("path")
                         .attr("d", diagonal6)
-                        .attr("stroke", x.col6)
+                        .attr("stroke", x.col3a2)
                         .attr("stroke-width", 1)
                         .attr("fill", "none");
 
    sampleSVG.append("path")
                         .attr("d", diagonal7)
-                        .attr("stroke", x.col7)
+                        .attr("stroke", x.col3a3)
                         .attr("stroke-width", 1)
                         .attr("fill", "none");
 
    sampleSVG.append("path")
                         .attr("d", diagonal8)
-                        .attr("stroke", x.col7)
+                        .attr("stroke", x.col3a4)
                         .attr("stroke-width", 1)
                         .attr("fill", "none");
 
@@ -164,8 +169,8 @@ function updateJSON0(){
                         .attr("cx", 20)
                         .attr("cy", 200)
                         .on("mouseover", function() {
-                            getNewData(updateJSON0());
-                            d3.select("#tx2").text(x.text1).style('opacity', 1);
+                            getNewData(updateJSON1a1());
+                            d3.select("#tx2").text(x.text1a1).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
@@ -177,16 +182,15 @@ function updateJSON0(){
                             d3.selectAll(".node").style("opacity",1).style("display","block");
                         });
 
-
-   sampleSVG.append("circle")
+  sampleSVG.append("circle")
                         .style("stroke", "gray")
                         .style("fill", "black")
                         .attr("r", 8)
-                        .attr("cx", 100)
-                        .attr("cy", 150)
+                        .attr("cx", 50)
+                        .attr("cy", 200)
                         .on("mouseover", function() {
-                            getNewData(updateJSON())
-                            d3.select("#tx2").text(x.text2).style('opacity', 1);
+                            getNewData(updateJSON1a2());
+                            d3.select("#tx2").text(x.text1a2).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
@@ -198,15 +202,15 @@ function updateJSON0(){
                             d3.selectAll(".node").style("opacity",1).style("display","block");
                         });
 
-    sampleSVG.append("circle")
+   sampleSVG.append("circle")
                         .style("stroke", "gray")
                         .style("fill", "black")
                         .attr("r", 8)
-                        .attr("cx", 50)
-                        .attr("cy", 200)
+                        .attr("cx", 100)
+                        .attr("cy", 150)
                         .on("mouseover", function() {
-                            getNewData(updateJSON7())
-                            d3.select("#tx2").text(x.text1a1).style('opacity', 1);
+                            getNewData(updateJSON2a1())
+                            d3.select("#tx2").text(x.text2a1).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
@@ -225,8 +229,8 @@ function updateJSON0(){
                         .attr("cx", 100)
                         .attr("cy", 250)
                         .on("mouseover", function() {
-                            getNewData(updateJSON2());
-                            d3.select("#tx2").text(x.text3).style('opacity', 1);
+                            getNewData(updateJSON2a2());
+                            d3.select("#tx2").text(x.text2a2).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
@@ -245,8 +249,8 @@ function updateJSON0(){
                         .attr("cx", 200)
                         .attr("cy", 100)
                         .on("mouseover", function() {
-                            getNewData(updateJSON3());
-                            d3.select("#tx2").text(x.text4).style('opacity', 1);
+                            getNewData(updateJSON3a1());
+                            d3.select("#tx2").text(x.text3a1).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
@@ -265,8 +269,8 @@ function updateJSON0(){
                         .attr("cx", 200)
                         .attr("cy", 180)
                         .on("mouseover", function() {
-                            getNewData(updateJSON4());
-                            d3.select("#tx2").text(x.text5).style('opacity', 1);
+                            getNewData(updateJSON3a2());
+                            d3.select("#tx2").text(x.text3a2).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
@@ -285,8 +289,8 @@ function updateJSON0(){
                         .attr("cx", 200)
                         .attr("cy", 220)
                         .on("mouseover", function() {
-                            getNewData(updateJSON5());
-                            d3.select("#tx2").text(x.text6).style('opacity', 1);
+                            getNewData(updateJSON3a3());
+                            d3.select("#tx2").text(x.text3a3).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
@@ -305,8 +309,28 @@ function updateJSON0(){
                         .attr("cx", 200)
                         .attr("cy", 300)
                         .on("mouseover", function() {
-                            getNewData(updateJSON6());
-                            d3.select("#tx2").text(x.text7).style('opacity', 1);
+                            getNewData(updateJSON3a4());
+                            d3.select("#tx2").text(x.text3a4).style('opacity', 1);
+                            d3.select(this).style("fill","grey");
+                        })
+                        .on("mouseout", function() {
+                            d3.select("#tx2").style('opacity', 1);
+                            d3.select(this).style("fill","black");
+                        })
+                        .on("click", function() {
+                            d3.selectAll("#bubblePlot").style("opacity",1).style("display","block");
+                            d3.selectAll(".node").style("opacity",1).style("display","block");
+                        });
+
+    sampleSVG.append("circle")
+                        .style("stroke", "gray")
+                        .style("fill", "black")
+                        .attr("r", 8)
+                        .attr("cx", 175)
+                        .attr("cy", 200)
+                        .on("mouseover", function() {
+                            getNewData(updateJSON4a1());
+                            d3.select("#tx2").text(x.text4a1).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
@@ -371,7 +395,7 @@ function updateJSON0(){
                      .attr("id","datasetName")
                      .attr("x", 60)
                      .attr("y", 20)
-                     .text("tetasdasd")
+                     .text(x.dataName)
                      .attr("font-family", "sans-serif")
                      .attr("font-size", "11px")
                      .attr("fill", "black")
