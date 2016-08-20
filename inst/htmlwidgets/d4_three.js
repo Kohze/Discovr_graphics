@@ -171,6 +171,7 @@ function updateJSON1a1(){
                         .on("mouseover", function() {
                             getNewData(updateJSON1a1());
                             d3.select("#tx2").text(x.text1a1).style('opacity', 1);
+                            d3.select("#description").text(x.textBox1a1).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
@@ -191,6 +192,7 @@ function updateJSON1a1(){
                         .on("mouseover", function() {
                             getNewData(updateJSON1a2());
                             d3.select("#tx2").text(x.text1a2).style('opacity', 1);
+                            d3.select("#description").text(x.textBox1a2).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
@@ -211,6 +213,7 @@ function updateJSON1a1(){
                         .on("mouseover", function() {
                             getNewData(updateJSON2a1())
                             d3.select("#tx2").text(x.text2a1).style('opacity', 1);
+                            d3.select("#description").text(x.textBox2a1).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
@@ -231,6 +234,7 @@ function updateJSON1a1(){
                         .on("mouseover", function() {
                             getNewData(updateJSON2a2());
                             d3.select("#tx2").text(x.text2a2).style('opacity', 1);
+                            d3.select("#description").text(x.textBox2a2).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
@@ -251,6 +255,7 @@ function updateJSON1a1(){
                         .on("mouseover", function() {
                             getNewData(updateJSON3a1());
                             d3.select("#tx2").text(x.text3a1).style('opacity', 1);
+                            d3.select("#description").text(x.textBox3a1).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
@@ -271,6 +276,7 @@ function updateJSON1a1(){
                         .on("mouseover", function() {
                             getNewData(updateJSON3a2());
                             d3.select("#tx2").text(x.text3a2).style('opacity', 1);
+                            d3.select("#description").text(x.textBox3a2).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
@@ -291,6 +297,7 @@ function updateJSON1a1(){
                         .on("mouseover", function() {
                             getNewData(updateJSON3a3());
                             d3.select("#tx2").text(x.text3a3).style('opacity', 1);
+                            d3.select("#description").text(x.textBox3a3).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
@@ -311,6 +318,7 @@ function updateJSON1a1(){
                         .on("mouseover", function() {
                             getNewData(updateJSON3a4());
                             d3.select("#tx2").text(x.text3a4).style('opacity', 1);
+                            d3.select("#description").text(x.textBox3a4).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
@@ -331,6 +339,7 @@ function updateJSON1a1(){
                         .on("mouseover", function() {
                             getNewData(updateJSON4a1());
                             d3.select("#tx2").text(x.text4a1).style('opacity', 1);
+                            d3.select("#description").text(x.textBox4a1).style('opacity', 1);
                             d3.select(this).style("fill","grey");
                         })
                         .on("mouseout", function() {
@@ -344,7 +353,7 @@ function updateJSON1a1(){
 
   sampleSVG.append("text")
                      .attr("id","tx2")
-                     .attr("x", 275)
+                     .attr("x", 250)
                      .attr("y", 100)
                      .attr("font-family", "sans-serif")
                      .attr("font-size", "18px")
@@ -353,13 +362,13 @@ function updateJSON1a1(){
 
   sampleSVG.append("text")
                      .attr("id","description")
-                     .attr("x", 250)
-                     .attr("y", 200)
-                     .text("lore ipsum dolore")
+                     .attr("x", 305)
+                     .attr("y", 150)
                      .attr("font-family", "sans-serif")
                      .attr("font-size", "11px")
                      .attr("fill", "black")
-                     .style('opacity', 1);
+                     .style('opacity', 1)
+                     .style("text-anchor", "middle");
 
   sampleSVG.append("text")
                      .attr("id","header1")
@@ -412,13 +421,13 @@ function updateJSON1a1(){
                      .style('opacity', 1);
 
   var diameter = 350,
-      format = d3.format(",d"),
+      format = d3.format(".3n"),
       color = d3.scale.category20c();
 
   var bubble = d3.layout.pack()
       .sort(null)
       .size([350, 300])
-      .padding(1.5);
+      .padding(2);
 
   svg.append("rect")
      .attr("id","bubblePlot")

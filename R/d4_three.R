@@ -14,6 +14,7 @@ d4_three <- function(inputList, width = "auto", height = "auto") {
     col3a2 = inputList[["col3a2"]],
     col3a3 = inputList[["col3a3"]],
     col3a4 = inputList[["col3a4"]],
+
     text1a1 = inputList[["text1a1"]],
     text1a2 = inputList[["text1a2"]],
     text2a1 = inputList[["text2a1"]],
@@ -23,9 +24,21 @@ d4_three <- function(inputList, width = "auto", height = "auto") {
     text3a3 = inputList[["text3a3"]],
     text3a4 = inputList[["text3a4"]],
     text4a1 = inputList[["text4a1"]],
+
+    textBox1a1 = inputList[["textBox1a1"]],
+    textBox1a2 = inputList[["textBox1a2"]],
+    textBox2a1 = inputList[["textBox2a1"]],
+    textBox2a2 = inputList[["textBox2a2"]],
+    textBox3a1 = inputList[["textBox3a1"]],
+    textBox3a2 = inputList[["textBox3a2"]],
+    textBox3a3 = inputList[["textBox3a3"]],
+    textBox3a4 = inputList[["textBox3a4"]],
+    textBox4a1 = inputList[["textBox4a1"]],
+
     cNames = inputList[["names"]],
     method = inputList[["method"]],
     dataName = inputList[["dataName"]],
+
     inputNames1a1 = inputList[["inputNames1a1"]],
     inputNames1a2 = inputList[["inputNames1a2"]],
     inputNames2a1 = inputList[["inputNames2a1"]],
