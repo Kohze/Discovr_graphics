@@ -2,7 +2,7 @@
 #' made possible with htmlwidgets and D3
 #' @import htmlwidgets
 #' @export
-d4_three <- function(inputList, width = "auto", height = "auto") {
+d4_three <- function(inputList, width = 410, height = 310) {
 
   # forward options using x
   x = list(
